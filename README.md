@@ -1,3 +1,5 @@
+<img src='./logo.png'>
+
 # image2D
 对python内置GUI模块tkinter中的canvas进行的友好封装
 
