@@ -1,0 +1,33 @@
+<template class="page-view">
+    <ul>
+        <li>
+            <span @click="doScroll('interpolation')">曲线插值</span>
+            <ul>
+                <li>
+                    <span @click="doScroll('interpolation-Cardinal')">Cardinal</span>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <div class="doc-view" id="root-view">
+        <h2 id='fixed-interpolation'>曲线插值</h2>
+        <p>
+            给定若干个不连续的点，在这些点之间插入足够的点，来使得这些点连接起来是一个平滑的曲线。求解在何处插入新的点就是这里需要解决的问题。
+        </p>
+        <h2 id='fixed-interpolation-Cardinal'>Cardinal</h2>
+    </div>
+</template>
+<script>
+    import fixedScroll from '../service/fixedScroll.js';
+    export default {
+        methods: {
+            doScroll(fixedName) {
+                window.location.href = (window.location.href + "").replace(/\?fixed=.*$/, '') + "?fixed=" + fixedName;
+                fixedScroll(fixedName);
+            }
+        },
+        mounted() {
+            fixedScroll(this.$urlFormat().params.fixed);
+        }
+    };
+</script>

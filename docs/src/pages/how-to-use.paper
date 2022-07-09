@@ -1,0 +1,125 @@
+<template class="page-view">
+    <ul>
+        <li>
+            <span @click="doScroll('purpose')">关注的问题</span>
+        </li>
+        <li>
+            <span @click="doScroll('import')">如何引入?</span>
+        </li>
+        <li>
+            <span @click="doScroll('example')">一个简单的用例</span>
+        </li>
+        <li>
+            <span @click="doScroll('help')">获取帮助</span>
+        </li>
+    </ul>
+    <div class="doc-view" id="root-view">
+        <h2 id='fixed-purpose'>关注的问题</h2>
+        <p>
+            本库致力于提供更简单的
+            <span class="important">Python3+</span>
+            端上的
+            <span class="important">tkinter.Canvas</span>
+            二维绘图接口，主要包括这些方面：
+        </p>
+        <ol>
+            <li>
+                画笔：用于提供快速绘制各种图形的方法。
+            </li>
+            <li>
+                辅助计算：用于在你绘图的时候，提供可能会需要的计算方法。
+            </li>
+        </ol>
+        <p>
+            我们希望绘图是简单而有趣的、高效而愉悦的！
+        </p>
+        <h2 id='fixed-import'>如何引入?</h2>
+        <p>
+            首先，我们默认你已经安装好python3并拥有了
+            <span class="important">pip命令</span>
+            ，使用安装命令安装即可：
+        </p>
+        <pre q-code>
+            pip install image2d
+        </pre>
+        <p>
+            然后，在需要使用的地方引入（比如我们下面引入画笔）：
+        </p>
+        <pre q-code>
+            from image2d import Painter
+        </pre>
+        <p>
+            温馨提示：包image2d中包含的别的模块，我们会在对应文档开头说明引入语句。
+        </p>
+        <p>
+            此外，你也可以安装你指定的版本：
+        </p>
+        <pre q-code>
+            pip install image2d==version
+        </pre>
+        <p>
+            具体有哪些版本，你可以通过查看<a target="_blank"
+                href="https://github.com/hai2007/image2D.py/blob/master/CHANGELOG">CHANGELOG</a>来获取详细说明。
+        </p>
+        <h2 id='fixed-example'>一个简单的用例</h2>
+        <p>
+            比如，我们现在希望绘制一个文字：
+            <span class="important">我爱你中国～</span>。
+            怎么办？
+        </p>
+        <p>
+            非常简单，我们直接看代码：
+        </p>
+        <pre q-code>
+#!/usr/bin/python3
+
+from image2d import Painter
+import tkinter
+
+win = tkinter.Tk()
+
+# 获取canvas
+canvas = tkinter.Canvas(win, width=400, height=300)
+canvas.pack()
+
+# 生成画笔实例
+painter = Painter.Render(canvas)
+
+# 设置文字的颜色为红色并绘制文字
+painter.config({
+    "textAlign": "center",
+    "fillStyle":"red"
+}).fillText("我爱你中国～", 200, 150)
+
+win.mainloop()
+        </pre>
+        <p>
+            怎么样？是不是很简单。
+        </p>
+        <p>
+            通过画笔的config来调整画笔的参数，然后调用画笔的方法即可完成绘制，如果配合提供的辅助计算，便可以很容易的绘制更复杂的图表。
+        </p>
+        <h2 id='fixed-help'>获取帮助</h2>
+        <p>
+            在使用image2D的时候，如果遇到任何疑惑或问题，包括建议或对未来版本的想法，请先在
+            <a target="_blank" href="https://github.com/hai2007/image2D.py/issues">Github issue</a>
+            上查找是否存在相似内容，然后进行补充或追问，当然也可以增加新的话题进行交流，除非特殊情况，你会在48小时内获得
+            <a href="mailto:2501482523@qq.com">作者</a>
+            回复。
+        </p>
+    </div>
+</template>
+<script>
+    import fixedScroll from '../service/fixedScroll.js';
+    export default {
+        methods: {
+            doScroll(fixedName) {
+                window.location.href = (window.location.href + "").replace(/\?fixed=.*$/, '') + "?fixed=" + fixedName;
+                fixedScroll(fixedName);
+            }
+        },
+        mounted() {
+            fixedScroll(this.$urlFormat().params.fixed);
+        }
+    };
+</script>

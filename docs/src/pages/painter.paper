@@ -1,0 +1,130 @@
+<template class="page-view">
+    <ul>
+        <li>
+            <span @click="doScroll('painter')">获取画笔实例</span>
+        </li>
+        <li>
+            <span @click="doScroll('config')">配置画笔</span>
+        </li>
+        <li>
+            <span @click="doScroll('method')">画笔上的绘图方法</span>
+            <ul>
+                <li>
+                    <span @click="doScroll('method-text')">文字</span>
+                </li>
+                <li>
+                    <span @click="doScroll('method-rect')">矩形</span>
+                </li>
+                <li>
+                    <span @click="doScroll('method-circle')">圆</span>
+                </li>
+                <li>
+                    <span @click="doScroll('method-line')">折线</span>
+                </li>
+                <li>
+                    <span @click="doScroll('method-polygon')">多边形</span>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <div class="doc-view" id="root-view">
+        <h2 id='fixed-painter'>获取画笔实例</h2>
+        <p>
+            首先，你需要使用<span class="important">tkinter.canvas</span>生成一个画布组件：
+        </p>
+        <pre q-code>
+win = tkinter.Tk()
+canvas = tkinter.Canvas(win, width=400, height=300)
+canvas.pack()
+        </pre>
+        <p>
+            然后，就基于此画布创建画笔：
+        </p>
+        <pre q-code>
+            painter = Painter.Render(canvas)
+        </pre>
+        <h2 id='fixed-config'>配置画笔</h2>
+        <p>
+            上面获取的画笔，在使用前，可以通过<span class="important">config</span>方法来修改画笔的参数：
+        </p>
+        <pre q-code>
+painter.config({
+    // 添加你需要修改的属性即可
+});
+        </pre>
+        <p>
+            下面我们来看看画笔可配置属性有哪些：
+        </p>
+        <ol>
+            <li>"fillStyle":填充色或图案，默认"black"。</li>
+            <li>"strokeStyle":轮廓色或图案，默认"black"。</li>
+            <li>"lineWidth":线条宽度，默认1(单位px，下同)。</li>
+            <li>"textAlign":文字水平对齐方式，默认"left"左对齐（还有"center"居中和"right"右对齐）。</li>
+            <li>"textBaseline":文字垂直对齐方式，默认"middle"垂直居中（还有"top"上对齐和"bottom"下对齐）。</li>
+            <li>"font-size":文字大小，默认16。</li>
+            <li>"font-family":字体，默认"sans-serif"。</li>
+        </ol>
+        <h2 id='fixed-method'>画笔上的绘图方法</h2>
+        <h3 id='fixed-method-text'>文字</h3>
+        <p>
+            在点(x, y)处绘制填充的文字text：
+        </p>
+        <pre q-code>
+            painter.fillText(text, x, y)
+        </pre>
+        <h3 id='fixed-method-rect'>矩形</h3>
+        <p>
+            以(x, y)为左上角，宽width，高height绘制填充矩形：
+        </p>
+        <pre q-code>
+            painter.fillRect(x, y, width, height)
+        </pre>
+        <p>
+            以(x, y)为左上角，宽width，高height绘制轮廓矩形：
+        </p>
+        <pre q-code>
+            painter.strokeRect(x, y, width, height)
+        </pre>
+        <p>
+            以(x, y)为左上角，宽width，高height绘制轮廓并填充矩形：
+        </p>
+        <pre q-code>
+            painter.fullRect(x, y, width, height)
+        </pre>
+        <h3 id='fixed-method-circle'>圆</h3>
+        <p>
+            以(cx, cy)为圆心，半径r绘制填充圆形：
+        </p>
+        <pre q-code>
+            painter.fillCircle(cx, cy, r)
+        </pre>
+        <p>
+            以(cx, cy)为圆心，半径r绘制轮廓圆形：
+        </p>
+        <pre q-code>
+            painter.strokeCircle(cx, cy, r)
+        </pre>
+        <p>
+            以(cx, cy)为圆心，半径r绘制轮廓并填充圆形：
+        </p>
+        <pre q-code>
+            painter.fullCircle(cx, cy, r)
+        </pre>
+        <h3 id='fixed-method-line'>折线</h3>
+        <h3 id='fixed-method-polygon'>多边形</h3>
+    </div>
+</template>
+<script>
+    import fixedScroll from '../service/fixedScroll.js';
+    export default {
+        methods: {
+            doScroll(fixedName) {
+                window.location.href = (window.location.href + "").replace(/\?fixed=.*$/, '') + "?fixed=" + fixedName;
+                fixedScroll(fixedName);
+            }
+        },
+        mounted() {
+            fixedScroll(this.$urlFormat().params.fixed);
+        }
+    };
+</script>
