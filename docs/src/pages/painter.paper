@@ -111,7 +111,37 @@ painter.config({
             painter.fullCircle(cx, cy, r)
         </pre>
         <h3 id='fixed-method-line'>折线</h3>
+        <p>
+            以point为轨迹的轮廓折线：
+        </p>
+        <pre q-code>
+            painter.strokeLine(point)
+        </pre>
+        <p>
+            point的一个例子如下（别的方法的point也是一样的）：
+        </p>
+        <pre q-code>
+            point = [(100, 20), (200, 30), (300, 40), (400, 100), (80, 120), (250, 90)]
+        </pre>
         <h3 id='fixed-method-polygon'>多边形</h3>
+        <p>
+            以point为轨迹的填充多边形：
+        </p>
+        <pre q-code>
+            painter.fillPolygon(point)
+        </pre>
+        <p>
+            以point为轨迹的轮廓多边形：
+        </p>
+        <pre q-code>
+            painter.strokePolygon(point)
+        </pre>
+        <p>
+            以point为轨迹的轮廓并填充多边形：
+        </p>
+        <pre q-code>
+            painter.fullPolygon(point)
+        </pre>
     </div>
 </template>
 <script>

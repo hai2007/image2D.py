@@ -105,10 +105,24 @@ class Render:
 
     # 折线
 
-    def strokeLine(self):
+    def strokeLine(self, point):
+        self._canvas.create_line(
+            point, fill=self._config['strokeStyle'], width=self._config['lineWidth'])
         return self
 
     # 多边形
 
-    def fillPolygon(self):
+    def fillPolygon(self, point):
+        self._canvas.create_polygon(
+            point, fill=self._config['fillStyle'], outline="")
+        return self
+
+    def strokePolygon(self, point):
+        self._canvas.create_polygon(
+            point, fill="", outline=self._config['strokeStyle'], width=self._config['lineWidth'])
+        return self
+
+    def fullPolygon(self, point):
+        self._canvas.create_polygon(
+            point, fill=self._config['fillStyle'], outline=self._config['strokeStyle'], width=self._config['lineWidth'])
         return self
