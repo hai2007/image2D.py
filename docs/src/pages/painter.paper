@@ -33,6 +33,8 @@
             首先，你需要使用<span class="important">tkinter.canvas</span>生成一个画布组件：
         </p>
         <pre q-code>
+import tkinter
+
 win = tkinter.Tk()
 canvas = tkinter.Canvas(win, width=400, height=300)
 canvas.pack()
@@ -41,7 +43,15 @@ canvas.pack()
             然后，就基于此画布创建画笔：
         </p>
         <pre q-code>
-            painter = Painter.Render(canvas)
+from image2d import Painter
+
+painter = Painter.Render(canvas)
+        </pre>
+        <p>
+            当然，后续使用画笔绘制完毕的时候，别忘了更新窗口：
+        </p>
+        <pre q-code>
+            win.mainloop()
         </pre>
         <h2 id='fixed-config'>配置画笔</h2>
         <p>
@@ -63,6 +73,7 @@ painter.config({
             <li>"textBaseline":文字垂直对齐方式，默认"middle"垂直居中（还有"top"上对齐和"bottom"下对齐）。</li>
             <li>"font-size":文字大小，默认16。</li>
             <li>"font-family":字体，默认"sans-serif"。</li>
+            <li>"smooth":是否需要曲线差值，默认False。</li>
         </ol>
         <h2 id='fixed-method'>画笔上的绘图方法</h2>
         <h3 id='fixed-method-text'>文字</h3>

@@ -24,7 +24,10 @@ class Render:
         'font-size': 16,
 
         # 字体
-        'font-family': 'sans-serif'
+        'font-family': 'sans-serif',
+
+        # 是否需要曲线差值
+        "smooth": False
 
     }
 
@@ -107,22 +110,22 @@ class Render:
 
     def strokeLine(self, point):
         self._canvas.create_line(
-            point, fill=self._config['strokeStyle'], width=self._config['lineWidth'])
+            point, fill=self._config['strokeStyle'], width=self._config['lineWidth'], smooth=self._config['smooth'])
         return self
 
     # 多边形
 
     def fillPolygon(self, point):
         self._canvas.create_polygon(
-            point, fill=self._config['fillStyle'], outline="")
+            point, fill=self._config['fillStyle'], outline="", smooth=self._config['smooth'])
         return self
 
     def strokePolygon(self, point):
         self._canvas.create_polygon(
-            point, fill="", outline=self._config['strokeStyle'], width=self._config['lineWidth'])
+            point, fill="", outline=self._config['strokeStyle'], width=self._config['lineWidth'], smooth=self._config['smooth'])
         return self
 
     def fullPolygon(self, point):
         self._canvas.create_polygon(
-            point, fill=self._config['fillStyle'], outline=self._config['strokeStyle'], width=self._config['lineWidth'])
+            point, fill=self._config['fillStyle'], outline=self._config['strokeStyle'], width=self._config['lineWidth'], smooth=self._config['smooth'])
         return self

@@ -74,19 +74,13 @@
                     </li>
                 </ol>
             </li>
-            <li>
+            <!-- <li>
                 <h4>
                     <a href="#/calc" target="_blank">辅助计算</a>
                 </h4>
                 <ol>
-                    <li>
-                        <a href="#/calc?fixed=interpolation" target="_blank">
-                            曲线插值（比如： <a class='link' href="#/calc?fixed=interpolation-Cardinal" target="_blank">Cardinal</a>
-                            等）
-                        </a>
-                    </li>
                 </ol>
-            </li>
+            </li> -->
             <li>
                 <h4>
                     <a href="javascript:void(0)" target="_blank">更多</a>

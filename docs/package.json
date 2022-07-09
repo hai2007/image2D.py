@@ -1,6 +1,6 @@
 {
     "name": "image2d.docs",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "image2D官方文档",
     "scripts": {
         "dev": "etcpack_dev --config etcpack.dev.js",

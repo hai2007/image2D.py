@@ -11,9 +11,9 @@
             <li @click="loadPage('painter')" :active="pageName=='painter'?'yes':'no'">
                 画笔
             </li>
-            <li @click="loadPage('calc')" :active="pageName=='calc'?'yes':'no'">
+            <!-- <li @click="loadPage('calc')" :active="pageName=='calc'?'yes':'no'">
                 辅助计算
-            </li>
+            </li> -->
         </ul>
         <div class="search">
             <ui-search></ui-search>

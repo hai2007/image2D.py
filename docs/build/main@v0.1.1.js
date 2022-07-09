@@ -1646,7 +1646,7 @@ __etcpack__scope_args__=window.__etcpack__getBundle('33');
 
     script.render=function(createElement){
 
-        return createElement('div',{"quickpaper":"","data-quickpaper-347ecaca":""},[createElement('header',{"data-quickpaper-347ecaca":""},[createElement('h2',{"data-quickpaper-347ecaca":""},["image2D for Python3+"]),createElement('ul',{"data-quickpaper-347ecaca":""},[createElement('li',{"@click":"loadPage('home')",":active":"pageName=='home'?'yes':'no'","data-quickpaper-347ecaca":""},["主页"]),createElement('li',{"@click":"loadPage('how-to-use')",":active":"pageName=='how-to-use'?'yes':'no'","data-quickpaper-347ecaca":""},["快速开始"]),createElement('li',{"@click":"loadPage('painter')",":active":"pageName=='painter'?'yes':'no'","data-quickpaper-347ecaca":""},["画笔"]),createElement('li',{"@click":"loadPage('calc')",":active":"pageName=='calc'?'yes':'no'","data-quickpaper-347ecaca":""},["辅助计算"])]),createElement('div',{"class":"search","data-quickpaper-347ecaca":""},[createElement('ui-search',{"data-quickpaper-347ecaca":""},[])])]),createElement('div',{"data-quickpaper-347ecaca":""},[createElement('component',{":is":"pageObj","data-quickpaper-347ecaca":""},[])])])
+        return createElement('div',{"quickpaper":"","data-quickpaper-347ecaca":""},[createElement('header',{"data-quickpaper-347ecaca":""},[createElement('h2',{"data-quickpaper-347ecaca":""},["image2D for Python3+"]),createElement('ul',{"data-quickpaper-347ecaca":""},[createElement('li',{"@click":"loadPage('home')",":active":"pageName=='home'?'yes':'no'","data-quickpaper-347ecaca":""},["主页"]),createElement('li',{"@click":"loadPage('how-to-use')",":active":"pageName=='how-to-use'?'yes':'no'","data-quickpaper-347ecaca":""},["快速开始"]),createElement('li',{"@click":"loadPage('painter')",":active":"pageName=='painter'?'yes':'no'","data-quickpaper-347ecaca":""},["画笔"])]),createElement('div',{"class":"search","data-quickpaper-347ecaca":""},[createElement('ui-search',{"data-quickpaper-347ecaca":""},[])])]),createElement('div',{"data-quickpaper-347ecaca":""},[createElement('component',{":is":"pageObj","data-quickpaper-347ecaca":""},[])])])
 
     };
 
@@ -1781,16 +1781,16 @@ window.__etcpack__bundleSrc__['28']=function(){
     var __etcpack__scope_args__;
     __etcpack__scope_bundle__.default= {
   home: function home() {
-    return window.__etcpack__getLazyBundle('./build/main@v0.1.0-bundle1.js','29');
+    return window.__etcpack__getLazyBundle('./build/main@v0.1.1-bundle1.js','29');
   },
   painter: function painter() {
-    return window.__etcpack__getLazyBundle('./build/main@v0.1.0-bundle2.js','30');
+    return window.__etcpack__getLazyBundle('./build/main@v0.1.1-bundle2.js','30');
   },
   calc: function calc() {
-    return window.__etcpack__getLazyBundle('./build/main@v0.1.0-bundle3.js','31');
+    return window.__etcpack__getLazyBundle('./build/main@v0.1.1-bundle3.js','31');
   },
   "how-to-use": function howToUse() {
-    return window.__etcpack__getLazyBundle('./build/main@v0.1.0-bundle4.js','32');
+    return window.__etcpack__getLazyBundle('./build/main@v0.1.1-bundle4.js','32');
   }
 };
   
